@@ -7,7 +7,7 @@ def print_upto_n(i,n) :
 print_upto_n(1,5)
 
 
-# using backtracking
+# using backtracking(taking bottom up approach)
 def print_upto_n(i,n) :
     if i>n :
         return

@@ -35,3 +35,16 @@ def fibonacci_series_recursive(N):
 N = int(input("Enter N: "))
 print("Fibonacci series up to", N, "th term:")
 print(*fibonacci_series_recursive(N))
+
+# for calculating sum of fibonaci series upto nth index(0 based indexing)
+def fib_at_ith_index(i):
+    if i == 0 :
+        return 0 
+    if i == 1 :
+        return 1 
+    return fib_at_ith_index(i-1) + fib_at_ith_index(i-2)
+def calculate_sum_upto_nth_index(n) :
+    if n == 0 :
+        return 0 
+    return fib_at_ith_index(n) + calculate_sum_upto_nth_index(n-1)
+print(calculate_sum_upto_nth_index(5))  # index = 5 , total terms = 6 (0,1,1,2,3,5)

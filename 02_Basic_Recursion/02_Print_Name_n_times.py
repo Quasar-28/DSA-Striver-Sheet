@@ -8,10 +8,19 @@ def print_name(i,n) :
 print_name(1,5)
 
 # or 
+def print_name(n) :
+    if n == 0 :
+        return
+    print("Roger")
+    print_name(n-1)
+print_name(5)
+# here print happens before recursive call → top to bottom
 
-# def print_name(n) :
-#     if n == 0 :
-#         return
-#     print("Roger")
-#     print_name(n-1)
-# print_name(5)
+# or ,
+def print_name(n) :
+    if n == 0 :
+        return
+    print_name(n-1)
+    print("Roger")
+print_name(5)
+# here print happens after recursive call → bottom to top

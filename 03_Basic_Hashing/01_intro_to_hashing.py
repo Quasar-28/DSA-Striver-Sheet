@@ -2,10 +2,11 @@
 # here we take size of the hash array equal to max. element in given array and intialise the hash array with zero.
 # for e.g;
 my_array = [1,3,2,3,1,4]
-hash_array = [0] * (max(my_array)+1) # [0,0,0,0]
+hash_array = [0] * (max(my_array)+1) # [0,0,0,0,0]
 for i in my_array :
     hash_array[i] += 1
-# print(hash_array)
+print(hash_array)
+
 for num in range(len(hash_array)) :
     if hash_array[num] == 0 : continue
     print(f"{num} appears {hash_array[num]} times in the array ")

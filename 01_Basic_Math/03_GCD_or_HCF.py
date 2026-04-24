@@ -10,7 +10,9 @@ def find_GCD(num1,num2) :
     return gcd
 
 num1,num2 = map(lambda x : int(x) ,input("Enter two numbers ").split())
+print(num1,num2)
 gcd = find_GCD(num1,num2)
+
 print(f"GCD of {num1} and {num2} : {gcd}")
 
 # Method 2 (better approach)
@@ -31,7 +33,7 @@ num1,num2 = map(lambda x : int(x) ,input("Enter two numbers ").split())
 gcd = find_GCD(num1,num2)
 print(f"GCD of {num1} and {num2} : {gcd}")
 
-# Method 3 (Optimal Approach)
+# Method 3 (Optimal Approach(Euclid's Algorithm))
 def find_gcd(num1, num2):
     if num1 <= 0 or num2 <= 0:
         return None
@@ -39,9 +41,24 @@ def find_gcd(num1, num2):
         num1, num2 = num2, num1 % num2
     return num1
 
-num1, num2 = map(int, input("Enter two numbers: ").split())
-gcd = find_gcd(num1, num2)
-if gcd:
-    print(f"GCD of {num1} and {num2} is: {gcd}")
-else:
-    print("Please enter positive integers only.")
+# num1, num2 = map(int, input("Enter two numbers: ").split())
+# gcd = find_gcd(num1, num2)
+# if gcd:
+#     print(f"GCD of {num1} and {num2} is: {gcd}")
+# else:
+#     print("Please enter positive integers only.")
+
+
+# finding gcd of more than two numbers
+def find_gcd(num1, num2):
+    if num1 <= 0 or num2 <= 0:
+        return None
+    while num2 != 0:
+        num1, num2 = num2, num1 % num2
+    return num1
+num_list = [30,60,10]
+gcd = num_list[0]
+for i in num_list[1:] :
+    gcd = find_gcd(gcd,i)
+    # print(i)
+print(gcd)
